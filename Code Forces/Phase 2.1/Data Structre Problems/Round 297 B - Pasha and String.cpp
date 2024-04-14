@@ -9,13 +9,14 @@
 // |_|    |_|  \_\______|______| |_| /_/    \_\______/_/    \_\_____/   |_|  |_____|_| \_|______|
 // */
 #include <bits/stdc++.h>
+#pragma once
 #define Palastine ios_base::sync_with_stdio(false); cin.tie(0), cout.tie(0)
 #define ll long long
-//#define ld long double
-#define int long long int
+#define ld long double
+//#define int long long int
 #define loop(n) for(int i=0;i<n;i++)
 #define jloop(n) for(int j=0;j<n;j++)
-#define loop1(n) for(int i=1;i<=n;i++)
+#define loop1(n) for(int i=1;i<n;i++)
 #define cin(vec) for(auto& i : vec) cin >> i
 #define all(v) v.begin(), v.end()
 #define sz(x) (int)(x).size()
@@ -25,7 +26,7 @@
 #define el <<"\n"
 #define MAX_N 100005
 //#define pi=  31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679
-const ll MOD= 1000000007;
+//const ll MOD= 1000000007;
 using namespace std;
 const string pi="31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679";
 /////*************************************************************/
@@ -52,24 +53,30 @@ int editedsort(int arr[], int n)
     }
     return cnt;
 }
-vector<int>freq(26,0);
+vector<int>freq(1000001,0);
 void abufarhat()
 {
-    int n,cnt=0,c=0; cin>>n;
-    string s;cin>>s;
-    loop(n)
+    int m; string s,s1,s2;cin >>s>>m;vector<int>a(s.size()+1,0);
+// if(s.size()%2==0){ s1=s.substr(0,m/2);s2=s.substr(m/2,m);}
+// else
+// {
+//    // char mid=s[(m-1)/2];
+//     s.erase((m-1)/2);
+//     s1=s.substr(0,m/2);s2=s.substr(m/2,m);
+// }
+    while(m--)
     {
-        if(s[i]=='U') cnt++;
-        else cnt--;
-        if(!cnt and s[i]==s[i+1])c++;
+        int x; cin>>x;
+        a[x]+=1;
     }
-    cout<<c el;
+    loop1((s.size()+2)/2) {a[i]+=a[i-1];} loop1((s.size()+2)/2) {if(a[i]%2)swap(s[i-1],s[(s.size()+1)-i-1]);}
+    cout<< s el;
 }
 int32_t main()
 {
-     //Palastine;
-    //IN()
-    //OUT()
-  abufarhat();
- //  test
+    //   Palastine;
+    // IN()
+// OUT()
+    abufarhat();
+    //test
 }

@@ -1,3 +1,4 @@
+
 ////\*------------------  #Abu_Farhat  -----------------------------------*/
 ////\*----------------------------------    #فلسطين حرة  --------------------*/
 ///*
@@ -55,21 +56,55 @@ int editedsort(int arr[], int n)
 vector<int>freq(26,0);
 void abufarhat()
 {
-    int n,cnt=0,c=0; cin>>n;
-    string s;cin>>s;
+    int n,k,cnt=0;cin>>n>>k;vector<int>a(n);cin(a);
+    if(n==1)
+    {
+        if (n>=k)
+        {
+            cout << cnt el << a[0];
+            return;
+        }
+    }
+    loop(n-1)
+    {
+        if(a[i]+a[i+1]<k)
+        {
+            cnt+=k-(a[i]+a[i+1]);
+//           int t=k-cnt;
+//           a[i]+=t;
+//           res+=t;
+            a[i+1]+=k-(a[i]+a[i+1]);
+        }
+    }
+    loop1(n)
+    {
+        if(a[i]+a[i-1]<k)
+        {
+            a[i-1]=k-a[i];
+        }
+    }
+    bool f= false ;
     loop(n)
     {
-        if(s[i]=='U') cnt++;
-        else cnt--;
-        if(!cnt and s[i]==s[i+1])c++;
+        if(a[i]==0) f=true;
     }
-    cout<<c el;
+//    if(k==1 and f)
+//    {
+//        cout<< k el;
+//        loop(n) cout << a[i] <<" ";
+//        cout el;
+//    }
+    cout << cnt el;
+    loop(n) cout << a[i] << " ";
+    cout el;
+
+
 }
 int32_t main()
 {
-     //Palastine;
+    //Palastine;
     //IN()
     //OUT()
-  abufarhat();
- //  test
+    abufarhat();
+    //  test
 }

@@ -52,24 +52,22 @@ int editedsort(int arr[], int n)
     }
     return cnt;
 }
-vector<int>freq(26,0);
+vector<int>freq(10000,0);
 void abufarhat()
 {
-    int n,cnt=0,c=0; cin>>n;
-    string s;cin>>s;
-    loop(n)
+    int n,q,x;cin>>n;vector<int>a(n);cin(a);sort(all(a));
+    cin>>q;
+    while(q--)
     {
-        if(s[i]=='U') cnt++;
-        else cnt--;
-        if(!cnt and s[i]==s[i+1])c++;
+        cin>>x;
+        cout<<upper_bound(all(a),x)-a.begin() el;
     }
-    cout<<c el;
 }
 int32_t main()
 {
-     //Palastine;
+    //Palastine;
     //IN()
     //OUT()
-  abufarhat();
- //  test
+    abufarhat();
+    //  test
 }

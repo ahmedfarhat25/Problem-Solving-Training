@@ -11,8 +11,8 @@
 #include <bits/stdc++.h>
 #define Palastine ios_base::sync_with_stdio(false); cin.tie(0), cout.tie(0)
 #define ll long long
-//#define ld long double
-#define int long long int
+#define ld long double
+//#define int long long int
 #define loop(n) for(int i=0;i<n;i++)
 #define jloop(n) for(int j=0;j<n;j++)
 #define loop1(n) for(int i=1;i<=n;i++)
@@ -25,8 +25,10 @@
 #define el <<"\n"
 #define MAX_N 100005
 //#define pi=  31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679
-const ll MOD= 1000000007;
+//const ll MOD= 1000000007;
 using namespace std;
+#pragma GCC optimize("Ofast,unroll-loops,O3")
+#pragma GCC target("avx2,tune=native")
 const string pi="31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679";
 /////*************************************************************/
 /////*********************{بسم الله الرحمن الرحيم}***************/
@@ -52,24 +54,33 @@ int editedsort(int arr[], int n)
     }
     return cnt;
 }
-vector<int>freq(26,0);
+vector<int>freq(1000001,0);
+//const int N=2e5;
 void abufarhat()
 {
-    int n,cnt=0,c=0; cin>>n;
-    string s;cin>>s;
+    int n;cin >> n;vector<int>a(n);
+    map<int,int> st,bk;
     loop(n)
     {
-        if(s[i]=='U') cnt++;
-        else cnt--;
-        if(!cnt and s[i]==s[i+1])c++;
+        cin>>a[i];
+        st[a[i]]=i+1;
     }
-    cout<<c el;
+    for (int i = n-1, j = 0; i > 0, j< n; j++, i--) bk[a[i]] = j + 1;
+    int q;cin>>q;
+    vector<int>s(q);cin(s);
+    ll f=0,b= 0;
+    loop(q)
+    {
+        f+=st[s[i]];
+        b+=bk[s[i]];
+    }
+    cout << f << " " << b el;
 }
 int32_t main()
 {
-     //Palastine;
-    //IN()
-    //OUT()
-  abufarhat();
- //  test
+    //   Palastine;
+    // IN()
+// OUT()
+    abufarhat();
+//test
 }

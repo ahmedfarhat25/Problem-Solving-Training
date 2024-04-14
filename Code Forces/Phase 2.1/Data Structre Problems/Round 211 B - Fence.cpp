@@ -12,7 +12,7 @@
 #define Palastine ios_base::sync_with_stdio(false); cin.tie(0), cout.tie(0)
 #define ll long long
 //#define ld long double
-#define int long long int
+//#define int long long int
 #define loop(n) for(int i=0;i<n;i++)
 #define jloop(n) for(int j=0;j<n;j++)
 #define loop1(n) for(int i=1;i<=n;i++)
@@ -52,24 +52,29 @@ int editedsort(int arr[], int n)
     }
     return cnt;
 }
-vector<int>freq(26,0);
+vector<int>freq(1000001,0);
 void abufarhat()
 {
-    int n,cnt=0,c=0; cin>>n;
-    string s;cin>>s;
-    loop(n)
+    int n,k,s,minn=100000000008;
+    int a[1000005];
+    cin>>n>>k;a[0]=0;
+    loop1(n)
     {
-        if(s[i]=='U') cnt++;
-        else cnt--;
-        if(!cnt and s[i]==s[i+1])c++;
+        cin>>a[i];
+        a[i]+=a[i-1];
+        if(i>=k and minn>a[i]-a[i-k])
+        {
+            minn=a[i]-a[i-k];
+            s=i-k+1;
+        }
     }
-    cout<<c el;
+    cout<<s el;
 }
 int32_t main()
 {
-     //Palastine;
+    Palastine;
     //IN()
     //OUT()
-  abufarhat();
- //  test
+    abufarhat();
+    //  test
 }

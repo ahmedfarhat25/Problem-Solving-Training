@@ -55,21 +55,24 @@ int editedsort(int arr[], int n)
 vector<int>freq(26,0);
 void abufarhat()
 {
-    int n,cnt=0,c=0; cin>>n;
-    string s;cin>>s;
-    loop(n)
+    int n,m,cnt=0; cin>>n>>m; vector<int>a(n),b(m); cin(a);
+    set<int>st;
+    for (int i=n-1;i>=0;--i)
     {
-        if(s[i]=='U') cnt++;
-        else cnt--;
-        if(!cnt and s[i]==s[i+1])c++;
+        st.insert(a[i]);
+        a[i]=sz(st);
     }
-    cout<<c el;
+    loop(m)
+    {
+        int x; cin >>x;
+        cout<<a[x-1] el;
+    }
 }
 int32_t main()
 {
-     //Palastine;
+    //Palastine;
     //IN()
     //OUT()
-  abufarhat();
- //  test
+    abufarhat();
+    //  test
 }

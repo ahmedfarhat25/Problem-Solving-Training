@@ -12,7 +12,7 @@
 #define Palastine ios_base::sync_with_stdio(false); cin.tie(0), cout.tie(0)
 #define ll long long
 //#define ld long double
-#define int long long int
+//#define int long long int
 #define loop(n) for(int i=0;i<n;i++)
 #define jloop(n) for(int j=0;j<n;j++)
 #define loop1(n) for(int i=1;i<=n;i++)
@@ -52,24 +52,29 @@ int editedsort(int arr[], int n)
     }
     return cnt;
 }
-vector<int>freq(26,0);
+vector<int>freq(1000001,0);
 void abufarhat()
 {
-    int n,cnt=0,c=0; cin>>n;
-    string s;cin>>s;
+    int n;cin>>n;string s;cin>>s;
+    string s1=s.substr(0,n),s2=s.substr(n,n*2);
+    sort(all(s1));sort(all(s2));
+    //int sum1=0,sum2=0;
+    //loop(s1.size()) sum1+=s1[i];
+    //loop(s2.size()) sum2+=s2[i];
+    bool f=true,f2=true;
     loop(n)
     {
-        if(s[i]=='U') cnt++;
-        else cnt--;
-        if(!cnt and s[i]==s[i+1])c++;
+        if(!(s1[i]<s2[i])) f=false;
+        if(!(s1[i]>s2[i])) f2=false;
     }
-    cout<<c el;
+    if(f or f2) cout<<"YES\n";
+    else cout<<"NO\n";
 }
 int32_t main()
 {
-     //Palastine;
+    Palastine;
     //IN()
     //OUT()
-  abufarhat();
- //  test
+    abufarhat();
+    //  test
 }
